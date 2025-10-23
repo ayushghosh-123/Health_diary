@@ -59,7 +59,7 @@ export function StatsOverview({ entries }: StatsOverviewProps) {
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
       {stats.map((stat) => {
         const Icon = stat.icon;
         return (
@@ -73,7 +73,7 @@ export function StatsOverview({ entries }: StatsOverviewProps) {
               </div>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-slate-800">{stat.value}</div>
+              <div className="text-xl sm:text-2xl font-bold text-slate-800">{stat.value}</div>
               <p className="text-xs text-slate-500 mt-1">Last 7 days average</p>
             </CardContent>
           </Card>

@@ -56,11 +56,33 @@ export function EntryDialog({ open, onOpenChange, entry, onSave }: EntryDialogPr
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validation
+    if (!mood) {
+      alert('Please select a mood');
+      return;
+    }
+    
+    if (parseFloat(sleepHours) < 0 || parseFloat(sleepHours) > 24) {
+      alert('Sleep hours must be between 0 and 24');
+      return;
+    }
+    
+    if (parseFloat(waterIntake) < 0) {
+      alert('Water intake cannot be negative');
+      return;
+    }
+    
+    if (parseFloat(exerciseMinutes) < 0) {
+      alert('Exercise minutes cannot be negative');
+      return;
+    }
+    
     onSave({
       entry_date: format(date, 'yyyy-MM-dd'),
       mood,
-      symptoms,
-      notes,
+      symptoms: symptoms.trim(),
+      notes: notes.trim(),
       sleep_hours: parseFloat(sleepHours) || 0,
       water_intake: parseFloat(waterIntake) || 0,
       exercise_minutes: parseFloat(exerciseMinutes) || 0,
@@ -120,7 +142,7 @@ export function EntryDialog({ open, onOpenChange, entry, onSave }: EntryDialogPr
             </Select>
           </div>
 
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="space-y-2">
               <Label htmlFor="sleep">Sleep (hours)</Label>
               <Input

@@ -111,7 +111,7 @@ export function EntryList({ entries, onEdit, onDelete }: EntryListProps) {
             </div>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-3 gap-4 mb-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
               <div className="flex items-center gap-2 text-sm">
                 <Moon className="h-4 w-4 text-slate-500" />
                 <span className="text-slate-600">Sleep:</span>
