@@ -1,6 +1,7 @@
 
 
 -- Create health_entries table
+
 CREATE TABLE IF NOT EXISTS health_entries (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   user_id TEXT NOT NULL,
