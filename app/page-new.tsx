@@ -37,28 +37,24 @@ export default function Home() {
     try {
       setLoading(true);
       
-      // Create or get user in our database (ignore errors for existing users)
-      const userResult = await dbHelpers.createUser({
+      // Create or get user in our database
+      await dbHelpers.createUser({
         id: user.id,
         email: user.emailAddresses[0]?.emailAddress || '',
         full_name: user.fullName || '',
         username: user.username || user.firstName || '',
         avatar_url: user.imageUrl
+      }).catch(() => {
+        // User might already exist, that's okay
       });
-      
-      if (userResult.error) {
-        console.log('User creation result:', userResult.error);
-        // Continue anyway - user might already exist
-      }
 
       // Load health entries
       await loadEntries();
       
     } catch (err) {
-      console.error('Initialize user error:', err);
       toast({
-        title: 'Warning',
-        description: 'Some features may not work properly. Please refresh the page.',
+        title: 'Error',
+        description: 'Failed to initialize user data.',
         variant: 'error'
       });
     } finally {
