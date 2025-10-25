@@ -5,7 +5,7 @@ import { Heart, LogIn, UserPlus, Brain, Activity, CheckCircle, Smile, Calendar, 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { useState, useEffect } from 'react';
-import { supabase, dbHelpers } from '@/lib/supabase';
+import { dbHelpers } from '@/lib/supabase';
 import type { HealthEntry } from '@/lib/supabase';
 import { useToast } from '@/components/hooks/use-toast';
 import { MainNavbar } from '@/components/main-navbar';
