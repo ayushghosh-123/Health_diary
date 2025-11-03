@@ -1,7 +1,7 @@
 'use client';
 
 import { useUser } from '@clerk/nextjs';
-import { Heart, LogIn, UserPlus, Brain, Activity, CheckCircle, Smile, Calendar, TrendingUp, Zap, Clock, Utensils, Moon } from 'lucide-react';
+import { LogIn, UserPlus, Brain, Activity, CheckCircle, Smile, Calendar, TrendingUp, Zap, Clock, Utensils, Moon } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { useState, useEffect } from 'react';
@@ -85,8 +85,8 @@ export default function Home() {
     <nav className="border-b border-slate-200 bg-white/80 backdrop-blur-md sticky top-0 z-20 shadow-sm">
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <Heart className="h-7 w-7 text-rose-600" />
-          <span className="font-extrabold text-xl text-slate-800 tracking-tight">Reflect & Connect</span>
+          <Brain className="h-7 w-7 text-rose-600" />
+          <span className="font-extrabold text-xl text-slate-800 tracking-tight">MindCare</span>
         </Link>
 
         {user ? (
