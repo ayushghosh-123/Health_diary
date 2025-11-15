@@ -1,4 +1,4 @@
-# Reflect & Connect Journaling System
+# Mindcare Journaling System
 
 A comprehensive health and wellness journaling platform with AI-powered insights, data visualization, and personal health tracking.
 
